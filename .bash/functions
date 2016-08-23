@@ -1,0 +1,28 @@
+function clean_logs {
+  cwd=$(pwd)
+  cd ~/tmp
+  for log in *.log; do 
+    tmp=$log
+    perl ~/bin/fix_log.pl $log > ${tmp:0:15}.log
+    mv ${tmp:0:15}.log ../logs
+    rm $log 
+  done
+  cd $cwd
+}
+
+function history {
+  ack $1 ~/logs
+}
+
+function job_handler {
+  if [ -z "$1" ]; then
+    jobs
+  else
+    fg $1
+  fi
+}
+
+function sup {
+  ps auxw | grep "$1"
+}
+
