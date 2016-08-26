@@ -59,6 +59,13 @@ alias X=''
 alias Y=''
 alias Z=''
 
+alias gA='git add -A && git commit -m'
+alias gcb='git checkout -b'
+alias gcd='git checkout develop'
+alias gcm='git checkout master'
+alias gl='git pull'
+alias gp='git push'
+
 alias pc='cd ~/middleware/django/realtimeparking'
 alias pq='psql pim postgres'
 alias psh='pc && python manage.py shell'
