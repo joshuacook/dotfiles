@@ -1,6 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
-let g:netrw_dirhist_1='/Users/joshua.cook/.vim'
-let g:netrw_dirhist_2='/Users/joshua.cook/Dropbox/current/udacity/senior_web_developer/src/1_event_app/api_server/.git'
-let g:netrw_dirhist_3='/Users/joshua.cook/Dropbox/slack-flask'
-let g:netrw_dirhist_4='/Users/joshua.cook/Dropbox/current/udacity/machine_learning/src/8_tcsl/src/.git'
