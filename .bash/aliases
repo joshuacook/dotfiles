@@ -16,7 +16,7 @@ alias h=''
 alias i='ipython3'
 alias j='jupyter'
 alias k=''
-alias l='clear && ls -l'
+alias l="clear && ls -l --ignore='*.pyc' --ignore='__pycache__'"
 alias m='less'
 alias n=''
 alias o='cd ~/Dropbox/current/on_registry/'
