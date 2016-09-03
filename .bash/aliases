@@ -63,6 +63,7 @@ alias gA='git add -A && git commit -m'
 alias gcb='git checkout -b'
 alias gcd='git checkout develop'
 alias gcm='git checkout master'
+alias gfix='git config remote.origin.push HEAD'
 alias gl='git pull'
 alias gp='git push'
 
