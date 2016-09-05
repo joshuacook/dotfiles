@@ -10,6 +10,15 @@ function clean_logs {
   cd $cwd
 }
 
+function git_add_and_push {
+  if [ -z "$1" ]
+  then
+    git add -A && git commit -m "$1" && git push
+  else
+    git add -A && git commit -m  && git push
+  fi 
+}
+
 function history {
   ack $1 ~/logs
 }
