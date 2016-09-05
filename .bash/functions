@@ -15,7 +15,7 @@ function git_add_and_push {
   then
     git add -A && git commit -m "$1" && git push
   else
-    git add -A && git commit -m  && git push
+    git add -A && git commit  && git push
   fi 
 }
 
