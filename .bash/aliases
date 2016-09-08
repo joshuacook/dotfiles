@@ -67,6 +67,7 @@ alias gfix='git config remote.origin.push HEAD'
 alias gl='git pull'
 alias gp='git push'
 
+alias gdo='python /home/joshuacook/gitd/gitd.py'
 alias pc='cd ~/middleware/django/realtimeparking'
 alias pq='psql pim postgres'
 alias psh='pc && python manage.py shell'

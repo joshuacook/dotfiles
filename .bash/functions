@@ -13,9 +13,9 @@ function clean_logs {
 function git_add_and_push {
   if [ -z "$1" ]
   then
-    git add -A && git commit -m "$1" && git push
-  else
     git add -A && git commit  && git push
+  else
+    git add -A && git commit -m "$1" && git push
   fi 
 }
 
