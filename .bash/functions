@@ -31,6 +31,34 @@ function job_handler {
   fi
 }
 
+function note_tool {
+file=$1
+filename="${file%.*}_notes"
+
+cp ~/.bash/note_tool.latex .
+
+pdftk $1 burst
+touch new_pdf.md
+
+for f in pg*.pdf
+do
+    echo "![]($f)" >> new_pdf.md
+    echo " " >> new_pdf.md
+    echo " " >> new_pdf.md
+    echo "\\pagebreak" >> new_pdf.md
+done
+
+docker run -v `pwd`:/source joshuacook/pandoc -f markdown new_pdf.md --template=note_tool.latex -o $filename.pdf
+
+rm new_pdf.md
+rm note_tool.latex
+rm pg*.pdf
+}
+
+function pandoc_me {
+docker run -v `pwd`:/source joshuacook/pandoc -f markdown '$1.md' -o '$1.pdf'
+}
+
 function remove_password_pdf {
 qpdf -password=$3 -decrypt $1 $2
 }
