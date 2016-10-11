@@ -37,7 +37,7 @@ filename="${file%.*}_notes"
 
 cp ~/.bash/note_tool.latex .
 
-pdftk $1 burst
+docker run -v `pwd`:/source joshuacook/pandoc pdftk $1 burst
 touch new_pdf.md
 
 for f in pg*.pdf
@@ -60,7 +60,7 @@ docker run -v `pwd`:/source joshuacook/pandoc -f markdown '$1.md' -o '$1.pdf'
 }
 
 function remove_password_pdf {
-qpdf -password=$3 -decrypt $1 $2
+docker run -v `pwd`:/source joshuacook/pandoc qpdf -password=$3 -decrypt $1 $2
 }
 
 function sup {
