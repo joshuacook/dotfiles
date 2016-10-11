@@ -31,6 +31,10 @@ function job_handler {
   fi
 }
 
+function remove_password_pdf {
+qpdf -password=$3 -decrypt $1 $2
+}
+
 function sup {
   ps auxw | grep "$1"
 }
