@@ -12,12 +12,16 @@ if [ -f .bash/git-completion.sh ]; then
   . .bash/git-prompt.sh
 fi
 
-if [ $(uname) = 'Darwin' ]; then
+if [ -f ~/.logins ]; then
     . ~/.logins
+fi
+
+if [ $(uname) = 'Darwin' ]; then
     export JAVA_HOME=$(/usr/libexec/java_home)
     LS_COLORS=gxfxbEaEBxxEhEhBaDaCaD
     export LS_COLORS
 fi
+
 cd -
 
 # Config
