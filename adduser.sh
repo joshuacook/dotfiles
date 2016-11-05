@@ -1,3 +1,5 @@
 adduser joshuacook
 usermod -aG sudo joshuacook
-su - username
+usermod -aG docker joshuacook
+cp -r /root/.ssh/ /home/joshuacook/
+chown joshuacook:joshuacook /home/joshuacook/.ssh/
