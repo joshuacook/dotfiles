@@ -16,7 +16,7 @@ alias h=''
 alias i='ipython3'
 alias j='jupyter'
 alias k=''
-alias l="clear && ls -l --ignore='*.pyc' --ignore='__pycache__'"
+alias l="clear && ls -l"
 alias m='less'
 alias n=''
 alias o='cd ~/Dropbox/current/on_registry/'
@@ -72,6 +72,7 @@ alias pc='cd ~/middleware/django/realtimeparking'
 alias pq='psql pim postgres'
 alias psh='pc && python manage.py shell'
 alias pt='pc && python manage.py test'
+alias dpy='docker_python'
 
 alias ta='tmux attach -t'
 alias td='tmux detach'

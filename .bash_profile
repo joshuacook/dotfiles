@@ -16,20 +16,14 @@ if [ -f ~/.logins ]; then
     . ~/.logins
 fi
 
-if [ $(uname) = 'Darwin' ]; then
-    export JAVA_HOME=$(/usr/libexec/java_home)
-    LS_COLORS=gxfxbEaEBxxEhEhBaDaCaD
-    export LS_COLORS
-fi
-
 cd -
 
 # Config
 # Make changes here to describe your environment
 export USE_TERMINAL_THEMES=1
 export GREP_OPTIONS='--color=auto' 
-export HOSTNAME="$(hostname)"
-if [ HOSTNAME = "15MBP-010757.LOCAL" ]; then
+export HOSTNAME="LOCAL"
+if [ HOSTNAME = "Joshuas-MacBook-Pro.local" ]; then
     HOSTNAME='LOCAL'
 fi
 export HOSTNAME_SHORT="${HOSTNAME%%.*}"
@@ -37,4 +31,15 @@ export ME=$(whoami)
 export HISTFILESIZE=
 export EDITOR=vim
 
-GIT_PS1_SHOWCOLORHINTS=true PROMPT_COMMAND='__git_ps1 "${ME}@${HOSTNAME^^}:\w" "\\\$ "'
+GIT_PS1_SHOWCOLORHINTS=true PROMPT_COMMAND='__git_ps1 "${ME}@${HOSTNAME}:\w" "\\\$ "'
+
+
+# added by Anaconda3 4.2.0 installer
+export PATH="/Users/joshuacook/anaconda3/bin:$PATH"
+
+# Add GHC 7.10.3 to the PATH, via https://ghcformacosx.github.io/
+export GHC_DOT_APP="/Applications/ghc-7.10.3.app"
+if [ -d "$GHC_DOT_APP" ]; then
+      export PATH="${HOME}/.local/bin:${HOME}/.cabal/bin:${GHC_DOT_APP}/Contents/bin:${PATH}"
+fi
+
