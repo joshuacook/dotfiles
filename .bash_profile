@@ -31,7 +31,7 @@ export ME=$(whoami)
 export HISTFILESIZE=
 export EDITOR=vim
 
-GIT_PS1_SHOWCOLORHINTS=true PROMPT_COMMAND='__git_ps1 "${ME}@${HOSTNAME}:\w" "\\\$ "'
+GIT_PS1_SHOWCOLORHINTS=true PROMPT_COMMAND='__git_ps1 "${ME}@${HOSTNAME}:\w" "\n\\\$ "'
 
 
 # added by Anaconda3 4.2.0 installer
