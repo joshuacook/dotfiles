@@ -1,13 +1,15 @@
 alias 1='cd ~/Documents/projects && l'
 alias 2='ssh -i ~/.ssh/joshuacook.pem joshuacook@joshuacook.me'
-alias 3='ssh ubuntu@this-machine.cc'
+alias 3='ssh ubuntu@54.213.243.199'
 alias 4='ssh ubuntu@this-mongo.cc'
 alias 5='ssh -i ~/.ssh/dfds.pem ubuntu@dockerfordatascience.com'
+alias gym1='ssh ubuntu@34.218.81.13'
+alias gym2='ssh ubuntu@34.215.64.62'
 
 alias A='subl ~/.bash/aliases'
 alias a=''
-alias B=''
-alias b=''
+alias b='pdfer'
+alias B='beamer'
 alias C='clear'
 alias c='cd'
 alias D=''
@@ -31,7 +33,10 @@ alias h=''
 alias H=''
 alias I=''
 alias i=''
-alias j=''
+alias j='docker run -it --rm -p 80:8888 -v `pwd`:/home/jovyan jupyter/datascience-notebook start-notebook.sh --NotebookApp.token="coodle" ' #"sha1:8700b29af32b:f229cc9ad6ae6b329f7d0b18b426d500462bc35c"'
+alias jsel='docker run -it --rm -p 80:8888 -v `pwd`:/home/jovyan selenium start-notebook.sh --NotebookApp.token="coodle" ' #"sha1:8700b29af32b:f229cc9ad6ae6b329f7d0b18b426d500462bc35c"'
+alias jgrd='ssh joshuacook@uclax.online'
+alias jhub='ssh ubuntu@uclax.online'
 alias k=''
 alias K=''
 alias l="clear && ls -l"
@@ -40,24 +45,24 @@ alias m='less'
 alias M='make'
 alias n=''
 alias N=''
-alias nbc='docker run -it --rm -v `pwd`:/home/jovyan jupyter/scipy-notebook jupyter nbconvert'
+alias nbc='docker run -it --rm -v `pwd`:/home/jovyan jupyter/datascience-notebook jupyter nbconvert --to markdown *.ipynb'
+alias nbcR='docker run -it --rm -v `pwd`:/home/jovyan nbconvert jupyter nbconvert --to pdf *.ipynb --template classicm'
 alias O=''
 alias o=''
 alias p='. ~/.bash_profile'
 alias P='vi ~/.bash_profile ~/.bash/* ~/.vimrc'
-alias pip=/usr/local/bin/pip3
-alias python=/usr/local/bin/python3
 alias q=''
 alias Q=''
 alias r=''
 alias R=''
-alias s=''
+alias s='aws s3'
 alias S=''
 alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
 alias T=''
 alias t='tmux'
 alias U=''
 alias u='cd ~/Dropbox/projects/UCLA_Extension && l'
+alias uc='export AWS_PROFILE=ucla'
 alias V=''
 alias v='vim'
 alias w=''
@@ -68,3 +73,27 @@ alias Y=''
 alias y='sudo ifconfig en0 down && sudo ifconfig en0 up'
 alias Z=''
 alias z=''
+
+function doxer {
+    docker run -it --rm -v `pwd`:/home/jovyan jupyter/datascience-notebook pandoc $1.md -o $1.docx
+}
+
+function nbconverter {
+    docker run -it -v `pwd`:/home/jovyan nbconvert python /home/convert.py /home/jovyan/$1
+}
+
+function pdfer {
+    docker run -it -v `pwd`:/home/$1 writing \ 
+            pandoc \
+            --template=mytemplate.latex \
+            -F pandoc-crossref \
+            -F pandoc-citeproc \
+            --listings \
+            -F /home/pandoc-wrapfig.py \
+            --bibliography /home/bib.bib \
+            /home/$1.md -o /home/$1.pdf
+}
+
+function beamer {
+    docker run -it --rm -v `pwd`:/home/jovyan jupyter/datascience-notebook pandoc -o $1.pdf -t beamer $1.md
+}

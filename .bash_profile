@@ -1,5 +1,5 @@
 export PATH=$HOME/local/bin:$PATH
-
+export EVENT_NOKQUEUE=1
 cd ~
 
 . .bash/aliases
@@ -16,7 +16,7 @@ cd -
 # Make changes here to describe your environment
 export USE_TERMINAL_THEMES=1
 export GREP_OPTIONS='--color=auto' 
-export HOSTNAME="REMOTE"
+export HOSTNAME="LOCAL"
 if [ HOSTNAME = "Joshuas-MacBook-Pro.local" ]; then
     HOSTNAME='LOCAL'
 fi
@@ -25,6 +25,7 @@ export ME=$(whoami)
 export HISTFILESIZE=
 export EDITOR=vim
 
+export JAVA_HOME=$(/usr/libexec/java_home)
 GIT_PS1_SHOWCOLORHINTS=true PROMPT_COMMAND='__git_ps1 "${ME}@${HOSTNAME}:\w" "\n\\\$ "'
 
 # added by Anaconda3 4.2.0 installer
