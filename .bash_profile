@@ -1,7 +1,5 @@
-source ~/.bash/aliases
-
 export GREP_OPTIONS='--color=auto'
-export HOSTNAME="LOCAL"
+export HOSTNAME="QQB"
 export HOSTNAME_SHORT="${HOSTNAME%%.*}"
 export HISTFILESIZE=
 export EDITOR=vim
