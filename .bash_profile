@@ -12,6 +12,7 @@ export EDITOR=vim
  alias dc='docker-compose'
  alias de='docker exec -it'
  alias g='git'
+ alias G="git add -A && git commit -m 'latest' && git push"
  alias gA='git add -A && git commit -m 'latest' && git push'
  alias gcb='git checkout -b'
  alias gcm='git checkout master'
