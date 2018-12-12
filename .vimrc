@@ -16,25 +16,9 @@ filetype plugin indent on
 
 " leader and mode
   let mapleader = "\<space>"
-  map ; :
   map <Leader>w :w<cr>
-
-" Leader Commands
   nmap <Leader>q :wq!<CR> 
-  vmap <Leader>y "*y      
-  vmap <Leader>d "+d      
-  nmap <Leader>p <CR>"+p  
-  nmap <Leader>P <CR>"+P
-  vmap <Leader>p <CR>"+p
-  vmap <Leader>P <CR>"+P
-  map  <Leader>o :tabfind
-  map  <Leader>t :TagbarToggle<CR> 
   map  <Leader>i :set paste<CR>i
-  map  <Leader>I oimport ipdb; ipdb.set_trace()<CR><esc>
-  map  <leader>f :set foldlevel=
-  nnoremap <Leader>, :!ruby %<cr>
-  nnoremap <Leader>r :source ~/.vimrc<cr>
-  map <Leader>z <C-z>
 
 " supertab 
   imap <tab> <c-n>
