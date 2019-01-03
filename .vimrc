@@ -8,7 +8,7 @@ filetype plugin indent on
   set foldmethod=indent
   set foldlevel=20
   set number
-  set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
+  set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
 
 " airline settings 
   let g:airline#extensions#tabline#enabled = 1
