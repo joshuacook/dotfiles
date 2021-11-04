@@ -12,5 +12,6 @@ git clone https://github.com/ervandew/supertab.git
 git clone https://github.com/majutsushi/tagbar.git
 git clone https://github.com/vim-airline/vim-airline.git
 git clone https://github.com/tpope/vim-sensible.git
+git clone https://github.com/dense-analysis/ale.git
 source ~/.bash_profile
 cd -                                                                                                                                    
