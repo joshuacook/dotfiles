@@ -1,5 +1,7 @@
 #!/bin/bash
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"
+sed -i 's/\[\[ -z ${AG_NO_CONTEXT+x} \]\] \&\& prompt_context/# &/' ~/.oh-my-bash/themes/agnoster/agnoster.theme.sh
+sed -i 's/^# OSH_THEME.*/OSH_THEME="agnoster"/; s/^OSH_THEME.*/OSH_THEME="agnoster"/' ~/.bashrc
 cp .bash_profile ~/.bash_profile
 cp .vimrc ~/.vimrc
 rm -rf ~/.vim
