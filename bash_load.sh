@@ -5,9 +5,7 @@ sed -i 's/^# OSH_THEME.*/OSH_THEME="agnoster"/; s/^OSH_THEME.*/OSH_THEME="agnost
 cp .bash_profile ~/.bash_profile
 cp .vimrc ~/.vimrc
 rm -rf ~/.vim
-apt install curl -y
-mkdir -p ~/.vim/autoload ~/.vim/bundle && \
-curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+mkdir -p ~/.vim/autoload ~/.vim/bundle && curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 cd ~/.vim/bundle
 git clone https://github.com/mattn/emmet-vim.git ~/.vim/bundle/emmet-vim
 git clone https://github.com/ctrlpvim/ctrlp.vim.git
