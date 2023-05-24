@@ -1,4 +1,5 @@
 #!/bin/bash
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"
 cp .bash_profile ~/.bash_profile
 cp .vimrc ~/.vimrc
 rm -rf ~/.vim
